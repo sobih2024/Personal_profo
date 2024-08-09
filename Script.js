@@ -87,6 +87,18 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     )}`;
 
     window.location.href = mailtoLink;
+
+    // Display the thank you message
+    const thankYouMessage = document.getElementById('thankYouMessage');
+    thankYouMessage.style.display = 'block';
+
+    // Optionally, reset the form fields after submission
+    document.getElementById('contactForm').reset();
+
+    // Optionally, hide the thank you message after a few seconds
+    setTimeout(() => {
+        thankYouMessage.style.display = 'none';
+    }, 5000); // Hide after 5 seconds
 });
 
 
