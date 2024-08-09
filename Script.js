@@ -70,6 +70,7 @@ const typed = new Typed('.multiple-text', {
 
 });
 
+
 // contact form
 
 document.getElementById('contactForm').addEventListener('submit', function (event) {

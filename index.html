@@ -12,6 +12,19 @@
 
     <!-- custom css-->
     <link rel="stylesheet" href="stylesheet.css">
+    <!-- 
+test Emailjs -->
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "T7VTjY17bETZhEf8T",
+            });
+        })();
+    </script>
+
 </head>
 
 <body>
@@ -226,7 +239,8 @@
             <input type="submit" value="Send Message" class="btn">
         </form>
 
-        <div id="thankYouMessage" style="display: none; text-align: center; margin-top: 20px; font-size: 18px; color: green;">
+        <div id="thankYouMessage"
+            style="display: none; text-align: center; margin-top: 20px; font-size: 18px; color: green;">
             Thank you for your message!
         </div>
 
