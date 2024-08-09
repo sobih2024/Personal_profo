@@ -73,33 +73,45 @@ const typed = new Typed('.multiple-text', {
 
 // contact form
 
-document.getElementById('contactForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent form submission
+function sendMail() {
+    let parms = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value,
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
+    }
+    emailjs.send("service_933h03d", "template_rhc5cfm", parms).then(alert("Email Sent!!"))
+}
 
-    const mailtoLink = `mailto:ahmadsobih961@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
-    )}`;
 
-    window.location.href = mailtoLink;
+// document.getElementById('contactForm').addEventListener('submit', function (event) {
+//     event.preventDefault(); // Prevent form submission
 
-    // Display the thank you message
-    const thankYouMessage = document.getElementById('thankYouMessage');
-    thankYouMessage.style.display = 'block';
+//     const name = document.getElementById('name').value;
+//     const email = document.getElementById('email').value;
+//     const phone = document.getElementById('phone').value;
+//     const subject = document.getElementById('subject').value;
+//     const message = document.getElementById('message').value;
 
-    // Optionally, reset the form fields after submission
-    document.getElementById('contactForm').reset();
+//     const mailtoLink = `mailto:ahmadsobih961@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+//         `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
+//     )}`;
 
-    // Optionally, hide the thank you message after a few seconds
-    setTimeout(() => {
-        thankYouMessage.style.display = 'none';
-    }, 5000); // Hide after 5 seconds
-});
+//     window.location.href = mailtoLink;
 
+//     // Display the thank you message
+//     const thankYouMessage = document.getElementById('thankYouMessage');
+//     thankYouMessage.style.display = 'block';
+
+//     // Optionally, reset the form fields after submission
+//     document.getElementById('contactForm').reset();
+
+//     // Optionally, hide the thank you message after a few seconds
+//     setTimeout(() => {
+//         thankYouMessage.style.display = 'none';
+//     }, 5000); // Hide after 5 seconds
+// 
 
 
