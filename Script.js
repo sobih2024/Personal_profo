@@ -92,39 +92,11 @@ function sendMail() {
     // Optionally, reset the form fields after submission
     document.getElementById('contactForm').reset();
 
-    // Optionally, hide the thank you message after a few seconds
-    setTimeout(() => {
-        thankYouMessage.style.display = 'none';
-    }, 5000); // Hide after 5 seconds
+    // // Optionally, hide the thank you message after a few seconds
+    // setTimeout(() => {
+    //     thankYouMessage.style.display = 'none';
+    // }, 5000); // Hide after 5 seconds
 
 
-
-// document.getElementById('contactForm').addEventListener('submit', function (event) {
-//     event.preventDefault(); // Prevent form submission
-
-//     const name = document.getElementById('name').value;
-//     const email = document.getElementById('email').value;
-//     const phone = document.getElementById('phone').value;
-//     const subject = document.getElementById('subject').value;
-//     const message = document.getElementById('message').value;
-
-//     const mailtoLink = `mailto:ahmadsobih961@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-//         `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
-//     )}`;
-
-//     window.location.href = mailtoLink;
-
-//     // Display the thank you message
-//     const thankYouMessage = document.getElementById('thankYouMessage');
-//     thankYouMessage.style.display = 'block';
-
-//     // Optionally, reset the form fields after submission
-//     document.getElementById('contactForm').reset();
-
-//     // Optionally, hide the thank you message after a few seconds
-//     setTimeout(() => {
-//         thankYouMessage.style.display = 'none';
-//     }, 5000); // Hide after 5 seconds
-// 
 
 
