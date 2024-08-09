@@ -85,17 +85,10 @@ function sendMail() {
     emailjs.send("service_933h03d", "template_rhc5cfm", parms).then(alert("Thank you for your message!"))
 }
 
-    // // Display the thank you message
-    // const thankYouMessage = document.getElementById('thankYouMessage');
-    // thankYouMessage.style.display = 'block';
 
-    // Optionally, reset the form fields after submission
-    document.getElementById('contactForm').reset();
+document.getElementById('contactForm').reset();
 
-    // // Optionally, hide the thank you message after a few seconds
-    // setTimeout(() => {
-    //     thankYouMessage.style.display = 'none';
-    // }, 5000); // Hide after 5 seconds
+
 
 
 
