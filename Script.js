@@ -71,7 +71,7 @@ const typed = new Typed('.multiple-text', {
 });
 
 
-// contact form
+// ======================================contact form =====================
 
 function sendMail() {
     let parms = {
