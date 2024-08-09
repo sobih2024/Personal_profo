@@ -82,12 +82,12 @@ function sendMail() {
         message: document.getElementById("message").value,
 
     }
-    emailjs.send("service_933h03d", "template_rhc5cfm", parms).then(alert("Email Sent!!"))
+    emailjs.send("service_933h03d", "template_rhc5cfm", parms).then(alert("Thank you for your message!"))
 }
 
-    // Display the thank you message
-    const thankYouMessage = document.getElementById('thankYouMessage');
-    thankYouMessage.style.display = 'block';
+    // // Display the thank you message
+    // const thankYouMessage = document.getElementById('thankYouMessage');
+    // thankYouMessage.style.display = 'block';
 
     // Optionally, reset the form fields after submission
     document.getElementById('contactForm').reset();
