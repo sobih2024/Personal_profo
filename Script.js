@@ -95,30 +95,3 @@ function sendMail() {
 
 
 
-
-
-
-
-//---------------------------------------------------test--------------------------------------
-
-// function sendMail() {
-//     let parms = {
-//         name: document.getElementById("name").value,
-//         email: document.getElementById("email").value,
-//         phone: document.getElementById("phone").value,
-//         subject: document.getElementById("subject").value,
-//         message: document.getElementById("message").value,
-
-//     };
-//     email
-//     // emailjs.send("service_933h03d", "template_rhc5cfm", parms).then(alert("Thank you for your message!"))
-// }
-
-
-// document.getElementById('contactForm').reset();
-
-
-
-
-
-
