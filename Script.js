@@ -73,20 +73,61 @@ const typed = new Typed('.multiple-text', {
 
 // ======================================contact form =====================
 
-function sendMail() {
+function sendMail()
+ {
     let parms = {
         name: document.getElementById("name").value,
         email: document.getElementById("email").value,
         phone: document.getElementById("phone").value,
         subject: document.getElementById("subject").value,
         message: document.getElementById("message").value,
+        recipient: "email"
+    };
 
-    }
-    emailjs.send("service_933h03d", "template_rhc5cfm", parms).then(alert("Thank you for your message!"))
+    emailjs.send("service_933h03d", "template_rhc5cfm", parms)
+        .then(function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+            alert("Thank you for your message!!");
+            // document.getElementById('contactForm').reset(); // Reset the form only after the email is successfully sent
+        }, 
+        
+        function (error) {
+            console.log("FAILED...", error);
+            alert("Failed to send the message. Please try again.");
+        });
+
+        document.getElementById('contactForm').reset();
 }
 
 
-document.getElementById('contactForm').reset();
+
+
+
+
+
+
+
+
+
+
+
+//---------------------------------------------------test--------------------------------------
+
+// function sendMail() {
+//     let parms = {
+//         name: document.getElementById("name").value,
+//         email: document.getElementById("email").value,
+//         phone: document.getElementById("phone").value,
+//         subject: document.getElementById("subject").value,
+//         message: document.getElementById("message").value,
+
+//     };
+//     email
+//     // emailjs.send("service_933h03d", "template_rhc5cfm", parms).then(alert("Thank you for your message!"))
+// }
+
+
+// document.getElementById('contactForm').reset();
 
 
 
