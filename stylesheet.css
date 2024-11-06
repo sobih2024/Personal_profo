@@ -218,14 +218,13 @@ span {
 /* Quote section styling */
 .quote {
     padding: 50px 0;
-    background-color:var(--qoute-color); /* or any light background color */
+    background-color:#865D36; /* or any light background color */
     text-align: center;
 }
 
 .quote .heading {
-    font-size: 10rem;
-    color: #333;
-    margin-bottom: 25px;
+   text-align: center;
+   font-size: 4.5rem;
 }
 
 .quote-content blockquote {
@@ -378,7 +377,6 @@ span {
 
 
 }
-
 
 
 .contact h2 {
