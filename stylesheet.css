@@ -234,9 +234,11 @@ span {
     margin: 20px auto;
     max-width: 600px;
     line-height: 1.3;
-    border-left: 10px solid #252424;
+    border-left: 5px solid #252424;
     padding-left: 15px;
 }
+
+
 
 
 .quote-content footer {
@@ -248,12 +250,26 @@ span {
 }
 .quote-img{
     display:flex;
-    justify-content: center;
-    align-item:center;
+    justify-content: right;
+    align-item:right;
     padding: 10px;
 
 }
 .quote-img img{
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #ccc;
+    border-radius:10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.Quote-img{
+    display:flex;
+    justify-content: left;
+    align-item:left;
+    padding: 10px;
+
+}
+.Quote-img img{
     max-width: 100%;
     height: auto;
     border: 3px solid #ccc;
