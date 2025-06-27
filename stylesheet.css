@@ -18,6 +18,24 @@
     --main-color: #0ef;
     --qoute-color: #9600d1fb;
 }
+/* Light mode variables */
+body.light-mode {
+    --bg-color: #f6f6f6;
+    --second-bg-color: #e0e0e0;
+    --text-color: #222;
+    --main-color: #0077ff;
+    --qoute-color: #7c3aed;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Ensure all elements use the variables */
+body,
+body.light-mode {
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.3s, color 0.3s;
+}
 
 html {
     font-size: 62.5%;

@@ -85,8 +85,33 @@ function sendMail() {
     emailjs.send("service_933h03d", "template_rhc5cfm", parms).then(alert("Thank you for your message!"))
     document.getElementById('contactForm').reset();
 }
+// ===========================================================Script for Dark Mode Toggle=========================================
 
-
+// Theme toggle logic
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (!toggleBtn) return; // Prevent errors if button not found
+    const icon = toggleBtn.querySelector('i');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme');
+    function setTheme(theme) {
+        if (theme === 'light') {
+            document.body.classList.add('light-mode');
+            icon.classList.remove('bx-moon');
+            icon.classList.add('bx-sun');
+        } else {
+            document.body.classList.remove('light-mode');
+            icon.classList.remove('bx-sun');
+            icon.classList.add('bx-moon');
+        }
+        localStorage.setItem('theme', theme);
+    }
+    setTheme(savedTheme ? savedTheme : (prefersDark ? 'dark' : 'light'));
+    toggleBtn.onclick = () => {
+        const isLight = document.body.classList.contains('light-mode');
+        setTheme(isLight ? 'dark' : 'light');
+    };
+});
 
 
 
