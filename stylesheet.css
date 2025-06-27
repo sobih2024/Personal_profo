@@ -144,10 +144,12 @@ span {
     width: 4rem;
     height: 4rem;
     background: transparent;
-    border: .2rem solid #1876f2; /* Facebook/LinkedIn blue */
+    border: .2rem solid #1876f2;
+    /* Facebook/LinkedIn blue */
     border-radius: 50%;
     font-size: 2rem;
-    color: #1877f2;              /* Blue for all icons */
+    color: #1877f2;
+    /* Blue for all icons */
     margin: 3rem 1.5rem 3rem 0;
     transition: .5s ease;
     box-shadow: none;
@@ -156,7 +158,8 @@ span {
 
 .socal-media a i {
     font-size: 2rem;
-    color: #1877f2;              /* Blue for all icons */
+    color: #1877f2;
+    /* Blue for all icons */
     transition: .5s ease;
 }
 
