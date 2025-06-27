@@ -18,6 +18,7 @@
     --main-color: #0ef;
     --qoute-color: #9600d1fb;
 }
+
 /* Light mode variables */
 body.light-mode {
     --bg-color: #f6f6f6;
