@@ -1,127 +1,112 @@
-// ========================== toggle icon navbar======================
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+// ========================== SELECTORS ==========================
+const menuIcon = document.querySelector('#menu-icon');
+const navbar = document.querySelector('.navbar');
+const header = document.querySelector('header');
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('header nav a');
 
-menuIcon.onclick = () => {
-
+// ========================== NAVBAR TOGGLE ==========================
+menuIcon?.addEventListener('click', () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
+});
 
-};
+// ========================== SCROLL BEHAVIOR ==========================
+window.addEventListener('scroll', () => {
+    let scrollY = window.scrollY;
 
-// ==========================scroll section avtive Link======================
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
+    // Highlight active nav link
+    sections.forEach(section => {
+        let offset = section.offsetTop - 150;
+        let height = section.offsetHeight;
+        let id = section.getAttribute('id');
 
-window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+        if (scrollY >= offset && scrollY < offset + height) {
+            navLinks.forEach(link => link.classList.remove('active'));
 
-        if (top >= offset && top < offset + height) {
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id + ']')
-                    .classList.add('active');
-            });
-        };
+            const activeLink = document.querySelector(
+                `header nav a[href*='${id}']`
+            );
+            if (activeLink) activeLink.classList.add('active');
+        }
     });
 
+    // Sticky header
+    header.classList.toggle('sticky', scrollY > 100);
 
-    // ================================ sticky navbar =================================
-    let header = document.querySelector('header');
-
-    header.classList.toggle('sticky', window.scrollY > 100);
-
-
-
-    // ================================ remove Toggle Icon and navbar when click navbar link (scroll) =================================
+    // Close mobile menu while scrolling
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
+});
 
-};
-
-
-// ================================ Scroll Reveal =================================
-
+// ========================== SCROLL REVEAL ==========================
 ScrollReveal({
-    // reset: true,
     distance: '80px',
     duration: 2000,
     delay: 200
 });
 
-ScrollReveal().reveal('.home-content , .heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img , .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
-
+ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
-
-// ================================ typed Js =================================
-const typed = new Typed('.multiple-text', {
-    strings: ['Developer', 'Designer' , 'writer'],
+// ========================== TYPED JS ==========================
+new Typed('.multiple-text', {
+    strings: ['Developer', 'Designer', 'Writer'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
     loop: true
-
 });
 
-
-// ======================================contact form =====================
-
+// ========================== EMAILJS – CONTACT FORM ==========================
 function sendMail() {
-    let parms = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        phone: document.getElementById("phone").value,
-        subject: document.getElementById("subject").value,
-        message: document.getElementById("message").value,
-        
-    }
-    emailjs.send("service_933h03d", "template_rhc5cfm", parms).then(function(){
-        alert("Your message has been sent successfully!");
-        document.getElementById('contactForm').reset();
-    })
-    .catch(function(error){
-        alert("Failed to send the message. Please try again later.");
-        console.error("Error sending email:", error);
-    });
-    
-    
-}
-// ===========================================================Script for Dark Mode Toggle=========================================
+    const parms = {
+        name: document.getElementById("name")?.value,
+        email: document.getElementById("email")?.value,
+        phone: document.getElementById("phone")?.value,
+        subject: document.getElementById("subject")?.value,
+        message: document.getElementById("message")?.value,
+    };
 
-// Theme toggle logic
-document.addEventListener('DOMContentLoaded', function () {
+    emailjs.send("service_933h03d", "template_rhc5cfm", parms)
+        .then(() => {
+            alert("Your message has been sent successfully!");
+            document.getElementById("contactForm")?.reset();
+        })
+        .catch((error) => {
+            alert("Failed to send message. Please try again.");
+            console.error("EmailJS Error:", error);
+        });
+}
+
+// ========================== DARK MODE TOGGLE ==========================
+document.addEventListener('DOMContentLoaded', () => {
     const toggleBtn = document.getElementById('theme-toggle');
-    if (!toggleBtn) return; // Prevent errors if button not found
+    if (!toggleBtn) return;
+
     const icon = toggleBtn.querySelector('i');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const savedTheme = localStorage.getItem('theme');
-    function setTheme(theme) {
-        if (theme === 'light') {
-            document.body.classList.add('light-mode');
-            icon.classList.remove('bx-moon');
-            icon.classList.add('bx-sun');
-        } else {
-            document.body.classList.remove('light-mode');
-            icon.classList.remove('bx-sun');
-            icon.classList.add('bx-moon');
-        }
+    const savedTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
+
+    function applyTheme(theme) {
+        const isLight = theme === 'light';
+        document.body.classList.toggle('light-mode', isLight);
+
+        icon.classList.remove(isLight ? 'bx-moon' : 'bx-sun');
+        icon.classList.add(isLight ? 'bx-sun' : 'bx-moon');
+
         localStorage.setItem('theme', theme);
     }
-    setTheme(savedTheme ? savedTheme : (prefersDark ? 'dark' : 'light'));
-    toggleBtn.onclick = () => {
+
+    applyTheme(savedTheme);
+
+    toggleBtn.addEventListener('click', () => {
         const isLight = document.body.classList.contains('light-mode');
-        setTheme(isLight ? 'dark' : 'light');
-    };
+        applyTheme(isLight ? 'dark' : 'light');
+    });
 });
-
-
 
 
 
