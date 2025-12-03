@@ -62,7 +62,7 @@ ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
 // ================================ typed Js =================================
 const typed = new Typed('.multiple-text', {
-    strings: ['Developer', 'Designer'],
+    strings: ['Developer', 'Designer' , 'writer'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
@@ -80,10 +80,18 @@ function sendMail() {
         phone: document.getElementById("phone").value,
         subject: document.getElementById("subject").value,
         message: document.getElementById("message").value,
-        from_email: document.getElementById("email").value
+        
     }
-    emailjs.send("service_933h03d", "template_rhc5cfm", parms).then(alert("Thank you for your message!"))
-    document.getElementById('contactForm').reset();
+    emailjs.send("service_933h03d", "template_rhc5cfm", parms).then(function(){
+        alert("Your message has been sent successfully!");
+        document.getElementById('contactForm').reset();
+    })
+    .catch(function(error){
+        alert("Failed to send the message. Please try again later.");
+        console.error("Error sending email:", error);
+    });
+    
+    
 }
 // ===========================================================Script for Dark Mode Toggle=========================================
 
