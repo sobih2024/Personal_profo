@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    textdecoration: none;
+    text-decoration: none;
     border: none;
     outline: none;
     scroll-behavior: smooth;
@@ -219,7 +219,7 @@ span {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    background: var(--second-bg-color);
+    background: var();
 
 }
 
@@ -228,7 +228,7 @@ span {
 }
 
 .heading {
-    text_align: center;
+    text-align: center;
     font-size: 4.5rem;
 
 }
@@ -254,32 +254,25 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
-    background: var(--main-color);
+    padding:10rem 9%;
+    background: var(--second-bg-color);
 
 }
 
-
-.heading {
-    text_align: center;
-    font-size: 4.5rem;
-
+.article-content{
+    max-width: 800px;
+    text-align: center;
 }
 
 .article-content h2 {
-    text-align: left;
-    line-height: 1.2;
-}
-
-.article-content h3 {
-    font-size: 2.6rem;
-    color: rgb(173, 171, 171);
-
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
 }
 
 .article-content p {
-    font-size: 1.6rem;
-    margin: 2rem 0 2rem;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: var(--text-color);
 }
 
 
