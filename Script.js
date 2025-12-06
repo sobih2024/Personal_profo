@@ -55,15 +55,5 @@ const typed = new Typed('.multiple-text', {
     loop: true
 });
 
-// ========================== THEME TOGGLE ==========================
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
 
-    // Change icon
-    if (document.body.classList.contains('light-mode')) {
-        themeIcon.classList.replace('bx-moon', 'bx-sun');
-    } else {
-        themeIcon.classList.replace('bx-sun', 'bx-moon');
-    }
-});
 
