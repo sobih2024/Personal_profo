@@ -2,8 +2,7 @@
 const menuIcon = document.querySelector('#menu-icon');
 const navbar = document.querySelector('.navbar');
 const header = document.querySelector('header');
-const themeToggle = document.querySelector('#theme-toggle');
-const themeIcon = themeToggle.querySelector('i');
+
 
 // ========================== MENU TOGGLE ==========================
 menuIcon.onclick = () => {
@@ -47,13 +46,12 @@ ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
 // ========================== TYPED TEXT ANIMATION ==========================
-const typed = new Typed('.multiple-text', {
+const typed = new Typed('.multiple-text', 
+    {
     strings: ['Frontend Developer', 'Web Designer', 'Software Developer', 'IT Technician'],
     typeSpeed: 80,
     backSpeed: 80,
     backDelay: 1200,
     loop: true
 });
-
-
 

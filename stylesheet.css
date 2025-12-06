@@ -16,8 +16,11 @@
     --second-bg-color: #463432;
     --text-color: #fff;
     --main-color: #0ef;
-    --qoute-color:  #6a5af9;;
+    --qoute-color: #6a5af9;
+    ;
 }
+
+
 
 
 html {
@@ -233,12 +236,12 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding:10rem 9%;
+    padding: 10rem 9%;
     background: var(--second-bg-color);
 
 }
 
-.article-content{
+.article-content {
     max-width: 800px;
     text-align: center;
 }
