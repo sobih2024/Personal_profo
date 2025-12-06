@@ -20,9 +20,6 @@
     ;
 }
 
-
-
-
 html {
     font-size: 62.5%;
     overflow-x: hidden;
@@ -134,70 +131,48 @@ span {
     text-indent: 2rem;
 }
 
-.socal-media {
+.social-media {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    gap: 1.5rem;
+    margin-top: 3rem;
 }
 
-.socal-media a {
+.social-media a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 4rem;
-    height: 4rem;
+    width: 4.5rem;
+    height: 4.5rem;
     background: transparent;
-    border: .2rem solid #1876f2;
-    /* Facebook/LinkedIn blue */
+    border: .2rem solid #1877f2;
     border-radius: 50%;
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: #1877f2;
-    /* Blue for all icons */
-    margin: 3rem 1.5rem 3rem 0;
-    transition: .5s ease;
-    box-shadow: none;
-    text-decoration: none;
+    transition: .35s ease-in-out;
 }
 
-.socal-media a i {
-    font-size: 2rem;
+.social-media a i {
+    font-size: 2.2rem;
+    transition: .35s ease-in-out;
     color: #1877f2;
-    /* Blue for all icons */
-    transition: .5s ease;
 }
 
-.socal-media a:hover,
-.socal-media a:focus {
+.social-media a:hover {
     background: #1877f2;
-    color: #fff;
-    box-shadow: 0 0 1rem #1877f2;
+    border-color: #1877f2;
+    transform: translateY(-4px);
+    box-shadow: 0 0 1.2rem rgba(24, 119, 242, 0.7);
 }
 
-.socal-media a:hover i,
-.socal-media a:focus i {
-    color: #fff;
-}
-
-
-.btn {
-    display: inline-block;
-    padding: 1rem 2.8rem;
-    background: var(--main-color);
-    box-shadow: 0 0 1rem var(--main-color);
-    font-size: 1.6rem;
-    color: var(--second-bg-color);
-    letter-spacing: .1rem;
-    font-weight: 600;
-    transition: .5s ease;
+.social-media a:hover i {
+    color: #ffffff;
 }
 
 
-.btn:hover {
 
-    box-shadow: none;
 
-}
 
 .about {
     display: flex;
