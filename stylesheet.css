@@ -239,10 +239,11 @@ span {
 .article-box {
     position: relative;
     width: 100%;
-    height: 320px; /* ← you can adjust (280–380 works best) */
+    height: 320px;
+    /* ← you can adjust (280–380 works best) */
     border-radius: 1.8rem;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* All images match size */
@@ -321,6 +322,7 @@ span {
     .article-container {
         grid-template-columns: 1fr;
     }
+
     .article-content h2 {
         font-size: 3rem;
     }
@@ -644,4 +646,25 @@ span {
         text-align: center;
         margin-top: 2rem;
     }
+
+    .footer-iconTop a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px;
+        background: #fff;
+        color: #000;
+        border-radius: 50%;
+        font-size: 28px;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+        transition: 0.3s ease;
+    }
+    /* Hover effect */
+.footer-iconTop a:hover {
+    background: #FFD700; /* gold color on hover */
+    color: #000;
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
+}
+
 }
